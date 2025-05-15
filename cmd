@@ -1,5 +1,4 @@
-Get-NetTCPConnection | Select-Object LocalAddress, LocalPort, State, OwningProcess |
-    Sort-Object LocalPort |
+Get-NetTCPConnection |
     ForEach-Object {
         $proc = Get-Process -Id $_.OwningProcess -ErrorAction SilentlyContinue
         [PSCustomObject]@{
@@ -8,4 +7,5 @@ Get-NetTCPConnection | Select-Object LocalAddress, LocalPort, State, OwningProce
             State         = $_.State
             ProcessName   = if ($proc) { $proc.ProcessName } else { "N/A" }
         }
-    }
+    } |
+    Sort-Object LocalPort, ProcessName -Unique
