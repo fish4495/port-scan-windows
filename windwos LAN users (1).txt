@@ -1,0 +1,579 @@
+
+# Default password (change if needed)
+$defaultPassword = "Sierra0001"
+
+# Convert to secure string
+$securePass = ConvertTo-SecureString $defaultPassword -AsPlainText -Force
+
+# User data (merged from multiple files, all disabled)
+$users = @(
+@{
+        Username="Administrator";
+        Status="Disabled";
+        Groups="Administrators, Domain Admins, Enterprise Admins, Group Policy Creator Owners, Schema Admin"
+    },
+@{
+        Username="hulk";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="loki";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="ironman";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="helena.aeriel";
+        Status="Disabled";
+        Groups="sales, Senior Management"
+    },
+@{
+        Username="brianne.Amelia";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="jacquelynn.lilli";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="lemar.gabriel";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="clara.eugenie";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="lilla.perrine";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="emlynne.bess";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="melony.korry";
+        Status="Disabled";
+        Groups="marketing"
+    },
+@{
+        Username="evvie.ardis";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="coletta.corette";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="madella.catharina";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="odelinda.selina";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="corrina.arleen";
+        Status="Disabled";
+        Groups="accounting"
+    },
+@{
+        Username="ariele.glenna";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="melinde.ealasaid";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="daniela.bebe";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="rakel.faustina";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="starlene.cristal";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="brooke.lelia";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="pam.evangelia";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="hatty.gilberta";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="samaria.elga";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="fleur.emma";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="kristel.moyra";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="rebecka.karna";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="shaina.kurtis";
+        Status="Disabled";
+        Groups="Marketing"
+    },
+@{
+        Username="karylin.nelle";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="gloriane.nonie";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="beatrix.magdalen";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="eloise.diahann";
+        Status="Disabled";
+        Groups="sales"
+    },
+@{
+        Username="clari.miof mela";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="stephannie.staci";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="polly.perry";
+        Status="Disabled";
+        Groups="accounting"
+    },
+@{
+        Username="lauretta.henryetta";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="constanta.kay";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="janith.sonya";
+        Status="Disabled";
+        Groups="Senior management"
+    },
+@{
+        Username="anya.katya";
+        Status="Disabled";
+        Groups="DnsAdmins, Executives"
+    },
+@{
+        Username="denise.kristina";
+        Status="Disabled";
+        Groups="Project management"
+    },
+@{
+        Username="harmonie.kristy";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="stephanie.sunny";
+        Status="Disabled";
+        Groups="DnsAdmins"
+    },
+@{
+        Username="ardys.esmeralda";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="leese.emilee";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="gloria.cristi";
+        Status="Disabled";
+        Groups="accounting"
+    },
+@{
+        Username="luca.lizzie";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="berrie.kipper";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="jayme.halimeda";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="latrena.jo-anne";
+        Status="Disabled";
+        Groups="accounting"
+    },
+@{
+        Username="ophelia.prue";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="joya.rheba";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="blinni.hedda";
+        Status="Disabled";
+        Groups="accounting"
+    },
+@{
+        Username="selle.shirl";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="linnie.kaela";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="melanie.lars";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="lorry.bryana";
+        Status="Disabled";
+        Groups="sales"
+    },
+@{
+        Username="gizela.leia";
+        Status="Disabled";
+        Groups="Office Admin"
+    },
+@{
+        Username="harriott.hattie";
+        Status="Disabled";
+        Groups="Senior management"
+    },
+@{
+        Username="nessa.lenora";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="gwennie.antonetta";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="gilberte.annabella";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="anjela.renata";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="lacey.eugenie";
+        Status="Disabled";
+        Groups="DnsAdmins"
+    },
+@{
+        Username="alvina.dania";
+        Status="Disabled";
+        Groups="Executives, Senior management"
+    },
+@{
+        Username="katharina.amelie";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="anissa.allyce";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="malva.sheba";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="mariette.alice";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="ermentrude.izabel";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="octavia.shantee";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="hilary.philis";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="ettie.hettie";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="sophie.beverly";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="cinderella.kassie";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="calley.glynda";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="sheelagh.adoree";
+        Status="Disabled";
+        Groups="Office Admin"
+    },
+@{
+        Username="dotti.larina";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="berta.annaliese";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="audy.dido";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="martha.anthea";
+        Status="Disabled";
+        Groups="accounting"
+    },
+@{
+        Username="daphna.jeannette";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="kip.marcelle";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="regan.bea";
+        Status="Disabled";
+        Groups="sales"
+    },
+@{
+        Username="sophie.alisha";
+        Status="Disabled";
+        Groups="IT Admins"
+    },
+@{
+        Username="adan.joana";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="opaline.lorene";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="nicoline.lizbeth";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="pamela.isis";
+        Status="Disabled";
+        Groups="accounting"
+    },
+@{
+        Username="aubrette.maegan";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="daryn.cynthia";
+        Status="Disabled";
+        Groups="accounting"
+    },
+@{
+        Username="sophronia.rori";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="olimpia.gwenore";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="amandi.kerrin";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="dinah.myrtia";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="krbtgt";
+        Status="Disabled";
+        Groups="Denied RODC Password Replication Group"
+    },
+@{
+        Username="superman";
+        Status="Disabled";
+        Groups="Domain Admins, Enterprise Admins"
+    },
+@{
+        Username="wonderwoman";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="batman";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="theflash";
+        Status="Disabled";
+        Groups="none"
+    },
+@{
+        Username="cyborg";
+        Status="Disabled";
+        Groups="Domain Admins, Enterprise Admins"
+    },
+@{
+        Username="chewbacca";
+        Status="Disabled";
+        Groups="Users"
+    },
+@{
+        Username="darthvader";
+        Status="Disabled";
+        Groups="Administrators, Users"
+    },
+@{
+        Username="lukeskywalker";
+        Status="Disabled";
+        Groups="Users"
+    },
+@{
+        Username="princessleia";
+        Status="Disabled";
+        Groups="Users"
+    },
+@{
+        Username="r2d2";
+        Status="Disabled";
+        Groups="Users"
+    },
+@{
+        Username="yoda";
+        Status="Disabled";
+        Groups="Administrators, Users"
+    },
+@{
+        Username="WDAGUtilityAccount";
+        Status="Disabled";
+        Groups="none"
+    }
+)
+
+foreach ($user in $users) {
+    try {
+        $safeUsername = $user.Username -replace '\.', '_'
+
+        # Create user and disable immediately after creation
+        New-LocalUser -Name $safeUsername -Password $securePass -FullName $user.Username -Description "Cyber Challenge User" -AccountNeverExpires
+        Disable-LocalUser -Name $safeUsername
+        Write-Host "Created and disabled user:" $safeUsername
+
+        if ($user.Groups -ne "" -and $user.Groups -ne $null -and $user.Groups -ne "none") {
+            $groupList = $user.Groups -split ","
+            foreach ($group in $groupList) {
+                $trimmedGroup = $group.Trim()
+                if ($trimmedGroup -ne "") {
+                    Add-LocalGroupMember -Group $trimmedGroup -Member $safeUsername -ErrorAction SilentlyContinue
+                    Write-Host " -> Added to group:" $trimmedGroup
+                }
+            }
+        }
+    } catch {
+        Write-Host "[ERROR] $($user.Username): $($_.Exception.Message)"
+    }
+}
